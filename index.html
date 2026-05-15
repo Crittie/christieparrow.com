@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christie Parrow — AI Transformation PM & Creative Director</title>
+  <meta name="description" content="AI Transformation Program Manager, Creative Director, and Onchain Builder based in Miami, FL.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #07070e;
+      --bg-section: #0b0b15;
+      --bg-card: rgba(255,255,255,0.03);
+      --bg-card-hover: rgba(255,255,255,0.055);
+      --border: rgba(255,255,255,0.07);
+      --border-hover: rgba(255,255,255,0.14);
+      --text: #e8e8f4;
+      --text-muted: #7878a0;
+      --text-faint: #44445a;
+      --accent: #4a7fff;
+      --accent-dim: rgba(74,127,255,0.15);
+      --accent-2: #9d7ef7;
+      --accent-2-dim: rgba(157,126,247,0.12);
+      --green: #22c97a;
+      --green-dim: rgba(34,201,122,0.12);
+      --font-display: 'Space Grotesk', system-ui, sans-serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+      --nav-h: 64px;
+      --radius: 12px;
+      --radius-sm: 8px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      border-bottom: 1px solid transparent;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    nav.scrolled {
+      background: rgba(7,7,14,0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-color: var(--border);
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: -0.03em;
+      color: var(--text);
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; align-items: center; gap: 4px; }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 100px;
+      border: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); border-color: var(--border); }
+    .nav-links a.cta {
+      color: var(--accent);
+      border-color: rgba(74,127,255,0.3);
+      background: var(--accent-dim);
+    }
+    .nav-links a.cta:hover { background: rgba(74,127,255,0.22); }
+
+    /* ── HERO ── */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: calc(var(--nav-h) + 60px) 40px 80px;
+      overflow: hidden;
+    }
+    #particle-canvas {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      opacity: 0.6;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; width: 100%; }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 20px; height: 1px;
+      background: var(--accent);
+    }
+    .hero-name {
+      font-family: var(--font-display);
+      font-size: clamp(52px, 7vw, 96px);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+      margin-bottom: 24px;
+      color: var(--text);
+    }
+    .hero-name .accent { color: var(--accent); }
+    .hero-taglines { margin-bottom: 36px; }
+    .hero-taglines p {
+      font-size: clamp(16px, 2vw, 20px);
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .hero-taglines p strong { color: var(--text); font-weight: 500; }
+    .hero-actions { display: flex; align-items: center; gap: 12px; margin-bottom: 64px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 500;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn:hover { border-color: var(--border-hover); background: var(--bg-card-hover); }
+    .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .btn.primary:hover { background: #3d6ee8; border-color: #3d6ee8; }
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .stat-item {}
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      color: var(--text);
+    }
+    .stat-label { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+    /* ── SECTIONS ── */
+    section { padding: 100px 40px; }
+    .section-inner { max-width: 960px; margin: 0 auto; }
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 48px;
+      color: var(--text);
+    }
+
+    /* ── AI WORK ── */
+    #work { background: var(--bg-section); }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: border-color 0.2s, background 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card:hover {
+      border-color: var(--border-hover);
+      background: var(--bg-card-hover);
+      transform: translateY(-2px);
+    }
+    .project-card.placeholder-card { opacity: 0.5; border-style: dashed; }
+    .project-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .project-icon {
+      width: 40px; height: 40px;
+      border-radius: var(--radius-sm);
+      background: var(--accent-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+    .project-link-icon {
+      color: var(--text-faint);
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    .project-card:hover .project-link-icon { color: var(--text-muted); }
+    .project-name {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .project-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 16px;
+    }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag {
+      font-size: 11px;
+      font-weight: 500;
+      padding: 3px 9px;
+      border-radius: 100px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+    .tag.blue { background: var(--accent-dim); border-color: rgba(74,127,255,0.2); color: var(--accent); }
+    .tag.green { background: var(--green-dim); border-color: rgba(34,201,122,0.2); color: var(--green); }
+    .tag.purple { background: var(--accent-2-dim); border-color: rgba(157,126,247,0.2); color: var(--accent-2); }
+
+    /* Demo video placeholder */
+    .demo-placeholder {
+      border: 1px dashed var(--border-hover);
+      border-radius: var(--radius);
+      padding: 40px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      text-align: center;
+      opacity: 0.6;
+    }
+    .demo-placeholder .play-icon {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      border: 1px solid var(--border-hover);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+    .demo-placeholder p { font-size: 13px; color: var(--text-muted); }
+    .demo-placeholder span { font-size: 11px; color: var(--text-faint); }
+
+    /* ── CREATIVE ── */
+    #creative { background: var(--bg); }
+    .creative-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .creative-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: border-color 0.2s;
+    }
+    .creative-card:hover { border-color: var(--border-hover); }
+    .creative-card.full-width { grid-column: 1 / -1; }
+    .creative-card-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin-bottom: 12px;
+    }
+    .creative-card-title {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+    .creative-card-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .art-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .art-piece {
+      aspect-ratio: 1;
+      border-radius: var(--radius-sm);
+      background: var(--bg-section);
+      border: 1px dashed var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--text-faint);
+      overflow: hidden;
+    }
+    .art-piece img { width: 100%; height: 100%; object-fit: cover; }
+    .yt-embed {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: var(--radius-sm);
+      background: var(--bg-section);
+      border: 1px dashed var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--text-faint);
+    }
+    .stat-big {
+      font-family: var(--font-display);
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      color: var(--text);
+    }
+    .stat-big-sub { font-size: 14px; color: var(--text-muted); margin-top: 4px; }
+
+    /* ── ABOUT ── */
+    #about { background: var(--bg-section); }
+    .about-grid { display: grid; grid-template-columns: 280px 1fr; gap: 60px; align-items: start; }
+    .about-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      border-radius: var(--radius);
+      background: var(--bg-card);
+      border: 1px dashed var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+      color: var(--text-faint);
+      font-size: 13px;
+      overflow: hidden;
+    }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .about-bio {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+    .about-bio strong { color: var(--text); font-weight: 500; }
+    .cert-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+    .cert {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+    .cert.active { background: var(--accent-dim); border-color: rgba(74,127,255,0.25); color: var(--accent); }
+    .tools-section-title {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin-bottom: 12px;
+    }
+    .tools-row { display: flex; flex-wrap: wrap; gap: 6px; }
+
+    /* ── CONNECT ── */
+    #connect { background: var(--bg); border-top: 1px solid var(--border); }
+    .connect-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: center;
+    }
+    .connect-headline {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .connect-sub { font-size: 15px; color: var(--text-muted); }
+    .connect-links { display: flex; flex-direction: column; gap: 10px; }
+    .connect-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text-muted);
+      padding: 10px 16px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      white-space: nowrap;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+    }
+    .connect-link:hover { color: var(--text); border-color: var(--border-hover); background: var(--bg-card-hover); }
+    .connect-link-icon { font-size: 16px; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 24px 40px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    footer p { font-size: 12px; color: var(--text-faint); }
+
+    /* ── SCROLL ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up:nth-child(2) { transition-delay: 0.08s; }
+    .fade-up:nth-child(3) { transition-delay: 0.16s; }
+    .fade-up:nth-child(4) { transition-delay: 0.24s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      #hero, section { padding-left: 20px; padding-right: 20px; }
+      .hero-stats { gap: 24px; }
+      .creative-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-photo { aspect-ratio: 1; max-width: 200px; }
+      .connect-inner { grid-template-columns: 1fr; }
+      .nav-links a:not(.cta) { display: none; }
+      footer { flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="#hero" class="nav-logo">Christie<span>.</span></a>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#creative">Creative</a>
+      <a href="#about">About</a>
+      <a href="#connect" class="cta">Connect</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <canvas id="particle-canvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Miami, FL &nbsp;·&nbsp; Available now</div>
+      <h1 class="hero-name">Christie<br>Parrow<span class="accent">.</span></h1>
+      <div class="hero-taglines">
+        <p><strong>AI Transformation Program Manager.</strong></p>
+        <p>Creative Director &nbsp;·&nbsp; Onchain Builder &nbsp;·&nbsp; Community Architect.</p>
+      </div>
+      <div class="hero-actions">
+        <a href="#work" class="btn primary">See my work ↓</a>
+        <a href="#connect" class="btn">Get in touch</a>
+        <a href="https://www.linkedin.com/in/christine-parrow-pmp/" target="_blank" class="btn">LinkedIn ↗</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">16+</div>
+          <div class="stat-label">Years driving transformation</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">PMP</div>
+          <div class="stat-label">Project Management Professional</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">MCP</div>
+          <div class="stat-label">Model Context Protocol builder</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">DANC3</div>
+          <div class="stat-label">Onchain collective, co-founder</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">1,700+</div>
+          <div class="stat-label">Twitter / X followers</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI WORK -->
+  <section id="work">
+    <div class="section-inner">
+      <div class="section-label">What I build</div>
+      <h2 class="section-title">AI Projects &amp; Tools</h2>
+
+      <div class="projects-grid">
+
+        <!-- productforge -->
+        <a href="https://github.com/crittie/productforge" target="_blank" class="project-card fade-up">
+          <div class="project-top">
+            <div class="project-icon">📦</div>
+            <span class="project-link-icon">↗</span>
+          </div>
+          <div class="project-name">productforge</div>
+          <div class="project-desc">Chatbot-guided ebook PDF generator. Configure your design, add your content, and download a polished professional PDF — all through a conversational interface.</div>
+          <div class="tag-row">
+            <span class="tag blue">Python</span>
+            <span class="tag green">Live</span>
+            <span class="tag">LLM-powered</span>
+          </div>
+        </a>
+
+        <!-- luminous-pulse -->
+        <a href="https://github.com/crittie/luminous-pulse" target="_blank" class="project-card fade-up">
+          <div class="project-top">
+            <div class="project-icon" style="background: var(--accent-2-dim);">⚡</div>
+            <span class="project-link-icon">↗</span>
+          </div>
+          <div class="project-name">luminous-pulse</div>
+          <div class="project-desc">AI-powered content and strategy engine. Generates research, copy, product descriptions, and video strategy — built with Claude commands and structured AI workflows.</div>
+          <div class="tag-row">
+            <span class="tag purple">Claude API</span>
+            <span class="tag blue">Python</span>
+            <span class="tag">MCP</span>
+          </div>
+        </a>
+
+        <!-- wayfinder-paths-sdk -->
+        <a href="https://github.com/crittie/wayfinder-paths-sdk" target="_blank" class="project-card fade-up">
+          <div class="project-top">
+            <div class="project-icon" style="background: rgba(34,201,122,0.1);">🧭</div>
+            <span class="project-link-icon">↗</span>
+          </div>
+          <div class="project-name">wayfinder-paths-sdk</div>
+          <div class="project-desc">Contributing to an AI agent path-planning framework — exploring how agents navigate decisions and execute multi-step workflows across environments.</div>
+          <div class="tag-row">
+            <span class="tag">AI Agents</span>
+            <span class="tag blue">Python</span>
+            <span class="tag">Open source</span>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Demo video placeholder -->
+      <div class="demo-placeholder fade-up">
+        <div class="play-icon">▶</div>
+        <p>AI Workflow Demo</p>
+        <span>Coming soon — live walkthrough of MCP + Claude API agent pipeline</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREATIVE -->
+  <section id="creative">
+    <div class="section-inner">
+      <div class="section-label">Beyond the PM</div>
+      <h2 class="section-title">Creative Work</h2>
+
+      <div class="creative-grid">
+
+        <!-- DANC3 -->
+        <div class="creative-card fade-up">
+          <div class="creative-card-label">Onchain music collective</div>
+          <div class="creative-card-title">DANC3</div>
+          <div class="creative-card-desc">Co-founded and served as creative director for DANC3 — an onchain music collective releasing music, visuals, and brand work exclusively on-chain. Built the creative strategy, visual identity, and community from the ground up.</div>
+          <div class="tag-row">
+            <span class="tag">Creative Director</span>
+            <span class="tag purple">Onchain</span>
+            <span class="tag">Brand Strategy</span>
+          </div>
+          <!-- REPLACE: swap this div for an <img> tag once you have a DANC3 visual -->
+          <div style="margin-top:16px; height:120px; border-radius:var(--radius-sm); background:var(--bg-section); border:1px dashed var(--border); display:flex; align-items:center; justify-content:center; color:var(--text-faint); font-size:12px;">
+            Add DANC3 visual / logo here
+          </div>
+        </div>
+
+        <!-- Gen Art -->
+        <div class="creative-card fade-up">
+          <div class="creative-card-label">Generative art · Celosphere</div>
+          <div class="creative-card-title">On-chain Collection</div>
+          <div class="creative-card-desc">Original generative art collection minted on Celosphere — the Celo Foundation &amp; Rarible generative art platform. Onchain from day one.</div>
+          <div class="tag-row">
+            <span class="tag">Gen Art</span>
+            <span class="tag green">Celo</span>
+            <span class="tag">Rarible</span>
+          </div>
+          <!-- REPLACE: swap placeholder divs for <img> tags with your actual gen art -->
+          <div class="art-grid">
+            <div class="art-piece">piece 1</div>
+            <div class="art-piece">piece 2</div>
+            <div class="art-piece">piece 3</div>
+          </div>
+        </div>
+
+        <!-- YouTube -->
+        <div class="creative-card fade-up">
+          <div class="creative-card-label">YouTube channel</div>
+          <div class="creative-card-title">musicurator live</div>
+          <div class="creative-card-desc">Live music curation content — building community at the intersection of music discovery and culture.</div>
+          <!-- REPLACE: swap the div below with an iframe embed from your YouTube channel -->
+          <!-- Example: <iframe width="100%" style="aspect-ratio:16/9;border-radius:8px;" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe> -->
+          <div class="yt-embed">
+            <span style="font-size:28px;">▶</span>
+            <span>Add YouTube embed here</span>
+          </div>
+        </div>
+
+        <!-- Twitter -->
+        <div class="creative-card fade-up" style="display:flex; flex-direction:column; justify-content:center;">
+          <div class="creative-card-label">Twitter / X</div>
+          <div class="stat-big">1,700<span style="color:var(--accent);">+</span></div>
+          <div class="stat-big-sub">Followers — built organically around music, AI, and culture</div>
+          <div style="margin-top:20px;">
+            <!-- REPLACE: update href with your actual Twitter/X URL -->
+            <a href="https://twitter.com/crittie" target="_blank" class="btn" style="display:inline-flex;">Follow on X ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="section-label">The full picture</div>
+      <h2 class="section-title">About</h2>
+      <div class="about-grid">
+        <div>
+          <!-- REPLACE: swap this div for <img src="your-headshot.jpg" alt="Christie Parrow"> -->
+          <div class="about-photo">
+            <span style="font-size:32px;">📷</span>
+            <span>Add headshot here</span>
+          </div>
+        </div>
+        <div>
+          <p class="about-bio">
+            I've spent <strong>16 years driving transformation</strong> — at the IRS, at FEMA during Hurricane Irma, and now in the AI space. I know what it takes to move large systems forward, and I know what it takes to build something new from scratch.
+          </p>
+          <p class="about-bio">
+            Right now I'm <strong>building AI agents</strong>, deploying workflow automations with MCP and Claude API, and completing the Anthropic Claude Certified Architect certification. I'm the person who can run your executive readout in the morning and prototype your next AI workflow in the afternoon.
+          </p>
+          <p class="about-bio">
+            Outside of the PM work, I co-founded <strong>DANC3</strong>, a fully onchain music collective. I mint generative art. I curate music. I build communities. These aren't hobbies — they're how I stay ahead of where culture and technology are going.
+          </p>
+          <div class="cert-bar">
+            <span class="cert">PMP</span>
+            <span class="cert">ITIL Foundation</span>
+            <span class="cert">M.Cert. IT PM — GWU</span>
+            <span class="cert active">Claude Certified Architect — In Progress</span>
+          </div>
+          <div class="tools-section-title">Tools &amp; Stack</div>
+          <div class="tools-row">
+            <span class="tag blue">Claude API</span>
+            <span class="tag blue">MCP</span>
+            <span class="tag blue">OpenClaw</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">Google AI Studio</span>
+            <span class="tag">ElevenLabs</span>
+            <span class="tag">Lovable</span>
+            <span class="tag purple">Midjourney</span>
+            <span class="tag purple">Runway ML</span>
+            <span class="tag">JIRA</span>
+            <span class="tag">Notion</span>
+            <span class="tag">Figma</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECT -->
+  <section id="connect" style="padding: 80px 40px;">
+    <div class="connect-inner">
+      <div>
+        <h2 class="connect-headline">Building at the intersection of AI and culture?<br>Let's talk.</h2>
+        <p class="connect-sub">Open to full-time roles, consulting, and creative collaborations.</p>
+      </div>
+      <div class="connect-links">
+        <a href="mailto:christineparrow@gmail.com" class="connect-link">
+          <span class="connect-link-icon">✉</span>
+          christineparrow@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/christine-parrow-pmp/" target="_blank" class="connect-link">
+          <span class="connect-link-icon">in</span>
+          LinkedIn
+        </a>
+        <a href="https://github.com/crittie" target="_blank" class="connect-link">
+          <span class="connect-link-icon">⌥</span>
+          github/crittie
+        </a>
+        <!-- REPLACE: update with your actual Twitter/X handle -->
+        <a href="https://twitter.com/crittie" target="_blank" class="connect-link">
+          <span class="connect-link-icon">𝕏</span>
+          Twitter / X
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Christie Parrow &nbsp;·&nbsp; Miami, FL &nbsp;·&nbsp; 2026</p>
+    <p>Built with intent.</p>
+  </footer>
+
+  <script>
+    // ── NAV SCROLL ──
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // ── PARTICLE CANVAS ──
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    const PARTICLE_COUNT = 70;
+    const MAX_DIST = 130;
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = document.getElementById('hero').offsetHeight;
+    }
+
+    function createParticle() {
+      return {
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.35,
+        vy: (Math.random() - 0.5) * 0.35,
+        r: Math.random() * 1.8 + 0.8
+      };
+    }
+
+    function initParticles() {
+      particles = Array.from({ length: PARTICLE_COUNT }, createParticle);
+    }
+
+    function drawParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(74,127,255,0.7)';
+        ctx.fill();
+
+        for (let j = i + 1; j < particles.length; j++) {
+          const q = particles[j];
+          const dx = p.x - q.x, dy = p.y - q.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < MAX_DIST) {
+            const alpha = (1 - dist / MAX_DIST) * 0.25;
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(q.x, q.y);
+            ctx.strokeStyle = `rgba(74,127,255,${alpha})`;
+            ctx.lineWidth = 0.6;
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(drawParticles);
+    }
+
+    resize();
+    initParticles();
+    drawParticles();
+    window.addEventListener('resize', () => { resize(); initParticles(); });
+
+    // ── SCROLL FADE-IN ──
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
