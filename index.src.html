@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Christine Parrow — Senior Project Manager · PMP</title>
+  <meta name="description" content="Christine 'Crittie' Parrow — PMP-certified senior project manager. Twelve years leading complex programs across fintech, healthcare, and platform engineering." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@200;300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- ext-resource-dependency: assets referenced as string literals in JSX
+       (the bundler can't see them inside script content; surface them here
+       so the bundle inlines them and exposes blob URLs via window.__resources). -->
+  <meta name="ext-resource-dependency" content="assets/cover-1.jpg" data-resource-id="cover1" />
+  <meta name="ext-resource-dependency" content="assets/cover-2.jpg" data-resource-id="cover2" />
+  <meta name="ext-resource-dependency" content="assets/cover-3.jpg" data-resource-id="cover3" />
+  <meta name="ext-resource-dependency" content="assets/cover-4.jpg" data-resource-id="cover4" />
+  <meta name="ext-resource-dependency" content="assets/cover-5.gif" data-resource-id="cover5" />
+  <meta name="ext-resource-dependency" content="assets/cover-6.jpg" data-resource-id="cover6" />
+  <meta name="ext-resource-dependency" content="assets/cover-7.jpg" data-resource-id="cover7" />
+  <meta name="ext-resource-dependency" content="assets/cover-8.jpg" data-resource-id="cover8" />
+  <meta name="ext-resource-dependency" content="assets/danc3-icon.jpg" data-resource-id="danc3Icon" />
+  <meta name="ext-resource-dependency" content="assets/fragments-1.jpg" data-resource-id="fragments1" />
+  <meta name="ext-resource-dependency" content="assets/fragments-2.jpg" data-resource-id="fragments2" />
+  <meta name="ext-resource-dependency" content="assets/fragments-3.jpg" data-resource-id="fragments3" />
+  <meta name="ext-resource-dependency" content="assets/christie-portrait.jpg" data-resource-id="christiePortrait" />
+
+  <template id="__bundler_thumbnail" data-bg-color="#07080C">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="g1" cx="22%" cy="22%" r="55%">
+          <stop offset="0%" stop-color="#8B7CFF" stop-opacity="0.55" />
+          <stop offset="100%" stop-color="#07080C" stop-opacity="0" />
+        </radialGradient>
+        <radialGradient id="g2" cx="80%" cy="78%" r="50%">
+          <stop offset="0%" stop-color="#06D6FF" stop-opacity="0.45" />
+          <stop offset="100%" stop-color="#07080C" stop-opacity="0" />
+        </radialGradient>
+        <linearGradient id="nameGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#F4F6FF" />
+          <stop offset="60%" stop-color="#8B7CFF" />
+          <stop offset="100%" stop-color="#06D6FF" />
+        </linearGradient>
+      </defs>
+      <rect width="1200" height="800" fill="#07080C" />
+      <rect width="1200" height="800" fill="url(#g1)" />
+      <rect width="1200" height="800" fill="url(#g2)" />
+      <g font-family="'Geist', 'Inter', system-ui, sans-serif" font-weight="500" letter-spacing="-6">
+        <text x="80" y="380" font-size="180" fill="#F4F6FF">Christie</text>
+        <text x="80" y="560" font-size="180" fill="url(#nameGrad)">Parrow.</text>
+      </g>
+      <g font-family="ui-monospace, 'SF Mono', monospace" font-size="20" fill="#F4F6FF" fill-opacity="0.6" letter-spacing="3">
+        <text x="80" y="660">MIAMI · FL  ·  AI TRANSFORMATION  ·  CREATIVE DIRECTOR</text>
+      </g>
+      <circle cx="1080" cy="120" r="6" fill="#8B7CFF">
+        <animate attributeName="opacity" values="1;0.3;1" dur="2.4s" repeatCount="indefinite" />
+      </circle>
+    </svg>
+  </template>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body data-bg="aurora" data-density="regular" data-motion="full">
+  <div id="root"></div>
+
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="cursor.jsx"></script>
+  <script type="text/babel" src="hero.jsx"></script>
+  <script type="text/babel" src="sections.jsx"></script>
+  <script type="text/babel" src="app.jsx"></script>
+
+  <script>
+    // Belt-and-suspenders: ensure reveal transitions trigger even if React
+    // mount is delayed (Babel parse) or fails. Idempotent.
+    setTimeout(function () {
+      document.body.classList.add("cp-ready");
+    }, 900);
+  </script>
+</body>
+</html>

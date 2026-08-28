@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" data-mode="editorial" data-accent="rust">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#EFEAE1" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0D0D0F" media="(prefers-color-scheme: dark)" />
+  <title>Christine Parrow — Senior Project Manager · PMP</title>
+  <meta name="description" content="Christine 'Crittie' Parrow — PMP-certified senior project manager. Sixteen years moving large systems forward at the IRS, FEMA, and now in AI." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles-v2.css" />
+
+  <!-- ext-resource-dependency: assets referenced as string literals in JSX
+       (the bundler can't see them inside script content; surface them here). -->
+  <meta name="ext-resource-dependency" content="assets/cover-1.jpg" data-resource-id="cover1" />
+  <meta name="ext-resource-dependency" content="assets/cover-2.jpg" data-resource-id="cover2" />
+  <meta name="ext-resource-dependency" content="assets/cover-3.jpg" data-resource-id="cover3" />
+  <meta name="ext-resource-dependency" content="assets/cover-4.jpg" data-resource-id="cover4" />
+  <meta name="ext-resource-dependency" content="assets/cover-5.gif" data-resource-id="cover5" />
+  <meta name="ext-resource-dependency" content="assets/cover-6.jpg" data-resource-id="cover6" />
+  <meta name="ext-resource-dependency" content="assets/cover-7.jpg" data-resource-id="cover7" />
+  <meta name="ext-resource-dependency" content="assets/cover-8.jpg" data-resource-id="cover8" />
+  <meta name="ext-resource-dependency" content="assets/fragments-1.jpg" data-resource-id="fragments1" />
+  <meta name="ext-resource-dependency" content="assets/fragments-2.jpg" data-resource-id="fragments2" />
+  <meta name="ext-resource-dependency" content="assets/fragments-3.jpg" data-resource-id="fragments3" />
+  <meta name="ext-resource-dependency" content="assets/christie-portrait.jpg" data-resource-id="christiePortrait" />
+
+  <template id="__bundler_thumbnail" data-bg-color="#EFEAE1">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#EFEAE1" />
+      <g font-family="'Instrument Serif', Georgia, serif" fill="#15110B">
+        <text x="80" y="380" font-size="180" letter-spacing="-4">Christie</text>
+        <text x="80" y="560" font-size="180" font-style="italic" letter-spacing="-4">Parrow<tspan fill="#B5483C" font-style="normal">.</tspan></text>
+      </g>
+      <g font-family="ui-monospace, 'SF Mono', monospace" font-size="18" fill="#15110B" fill-opacity="0.55" letter-spacing="3">
+        <text x="80" y="660">SARASOTA · FL  ·  SENIOR PM · PMP  ·  AI TRANSFORMATION</text>
+      </g>
+    </svg>
+  </template>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="app-v2.jsx"></script>
+
+  <script>
+    // Belt-and-suspenders for the reveal class.
+    setTimeout(function () { document.body.classList.add("cp-ready"); }, 900);
+  </script>
+</body>
+</html>
