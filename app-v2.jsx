@@ -113,10 +113,10 @@ function Hero({ resumeUrl }) {
         </h1>
 
         <p className="hero-tagline" data-reveal>
-          <em>Project manager.</em> Sixteen years moving large systems
-          forward — at the IRS, at FEMA during Hurricane Irma, now in AI.
-          PMP-certified, MCP-fluent, on the Anthropic Architect track.
-          Based in Sarasota.
+          <em>Project manager, PMP.</em> Sixteen years shipping complex
+          programs at the IRS and FEMA. Now I'm a maker: videos,
+          photos, mixtapes, stories, events.
+
         </p>
 
         <div className="hero-ctas" data-reveal>
@@ -138,15 +138,15 @@ function Hero({ resumeUrl }) {
         <div className="fact" data-reveal>
           <span className="fact-k">Credential</span>
           <span className="fact-v">PMP</span>
-          <span className="fact-d">Project Management Professional · PMI.</span>
+          <span className="fact-d">Earned 2014.</span>
         </div>
         <div className="fact" data-reveal>
-          <span className="fact-k">Current focus</span>
+          <span className="fact-k">Making</span>
           <span className="fact-v">MCP</span>
-          <span className="fact-d">Agentic workflows on the Claude API.</span>
+          <span className="fact-d">Videos, photos, mixtapes, events.</span>
         </div>
         <div className="fact" data-reveal>
-          <span className="fact-k">Outside the PM work</span>
+          <span className="fact-k">The maker work</span>
           <span className="fact-v serif">DANC3</span>
           <span className="fact-d">Onchain music collective, founder.</span>
         </div>
@@ -161,25 +161,25 @@ const WORK = [
   {
     name: "openclaw",
     href: "https://github.com/crittie/openclaw",
-    desc: "First agent. Personal assistant and prediction-market analyst — paper-trades on Polymarket. Python, running on a VPS.",
+    desc: "My first agent. A personal assistant that paper-trades prediction markets. Python, running on a VPS.",
     tags: [{ l: "Python" }, { l: "Agent", cls: "accent" }, { l: "Polymarket" }],
   },
   {
     name: "productforge",
     href: "https://github.com/crittie/productforge",
-    desc: "Chatbot-guided PDF generator. Configure layout, pour in content, download the document.",
+    desc: "A chatbot that builds PDFs. Describe the layout, add content, download the document.",
     tags: [{ l: "Python" }, { l: "LLM", cls: "accent" }, { l: "Live", cls: "live" }],
   },
   {
     name: "luminous-pulse",
     href: "https://github.com/crittie/luminous-pulse",
-    desc: "Content and strategy engine. Generates research, copy, product descriptions, and video strategy via structured Claude workflows.",
+    desc: "A content engine on the Claude API. Research, copy, product descriptions, video strategy.",
     tags: [{ l: "Claude API", cls: "accent" }, { l: "Python" }, { l: "MCP" }],
   },
   {
     name: "wayfinder-paths-sdk",
     href: "https://github.com/crittie/wayfinder-paths-sdk",
-    desc: "Contributor. AI-agent path-planning framework — how agents navigate decisions and execute multi-step work across environments.",
+    desc: "Contributor. A framework for how AI agents plan paths and execute multi-step work.",
     tags: [{ l: "AI Agents" }, { l: "Python" }, { l: "OSS" }],
   },
 ];
@@ -236,7 +236,7 @@ function Creative() {
       <div className="section-head">
         <span className="section-num"><strong>03</strong> · Creative</span>
         <h2 className="section-title">
-          A second practice — <em>music, onchain, visuals.</em>
+          The main practice — <em>music, visuals, culture.</em>
         </h2>
         <span className="section-side">Founder · Curator</span>
       </div>
@@ -248,9 +248,9 @@ function Creative() {
             <span className="card-kicker">Onchain music collective · Founder & Creative Director</span>
             <h3>DANC3.</h3>
             <p>
-              An onchain music collective releasing music, visuals, and brand
-              work exclusively on-chain. Built the creative strategy, identity,
-              and community from scratch. The mixtape lives at{" "}
+              An onchain music collective. Music, visuals, and brand,
+              released entirely on-chain. I built the creative strategy,
+              identity, and community from zero. The mixtape lives at{" "}
               <a className="alink" href="https://danc3.musictribes.xyz/"
                  target="_blank" rel="noopener">danc3.musictribes.xyz</a>.
             </p>
@@ -292,12 +292,12 @@ function Creative() {
             <span className="card-kicker">Generative art · Celosphere</span>
             <h3>Fragments of Perception.</h3>
             <p>
-              A three-piece on-chain collection — abstract portraiture exploring
-              how the face fractures under perception. Minted on{" "}
+              Three on-chain pieces about how a face fractures under
+              perception. Minted on{" "}
               <a className="alink"
                  href="https://x.com/Celo/status/1827000630365544789"
                  target="_blank" rel="noopener">Celosphere</a>, the Celo
-              Foundation × Rarible gen-art platform.
+              Foundation × Rarible generative art platform.
             </p>
           </div>
           <div className="frag-grid">
@@ -335,8 +335,8 @@ function Creative() {
               />
             </div>
             <p className="card-body">
-              Sets, conversations, and curation at the intersection of music
-              discovery and culture.
+              Sets and conversations on music discovery and where culture
+              is headed.
             </p>
             <div>
               <a className="btn ghost" href="https://www.youtube.com/@crittiep"
@@ -351,8 +351,8 @@ function Creative() {
             <h3 className="card-title">A small, real audience.</h3>
             <div className="bignum">1,700<sup>+</sup></div>
             <p className="card-body">
-              Followers built organically around music, AI, and culture.
-              Conversations, not metrics.
+              Built around music, AI, and culture. Real conversations.
+
             </p>
             <div>
               <a className="btn ghost" href="https://twitter.com/crittie"
@@ -388,7 +388,7 @@ function About({ resumeUrl }) {
       <div className="section-head">
         <span className="section-num"><strong>04</strong> · About</span>
         <h2 className="section-title">
-          Operator, builder, <em>curator.</em>
+          <em>I'm a maker.</em>
         </h2>
         <span className="section-side">Profile</span>
       </div>
@@ -396,25 +396,25 @@ function About({ resumeUrl }) {
       <div className="about">
         <div className="about-body" data-reveal>
           <p>
-            Sixteen years moving large systems forward. <em>At the IRS</em>,
-            running modernization programs against legacy infrastructure.
-            <em> At FEMA during Hurricane Irma</em>, coordinating disaster
-            recovery operations under time pressure. Now in the AI space,
-            running programs and prototyping the things they're trying to ship.
+            Sixteen years running large programs. <em>At the IRS</em>,
+            modernization work against legacy systems.
+            <em>At FEMA during Hurricane Irma</em>, disaster recovery
+            under real time pressure.
+
           </p>
           <p>
-            I'm <em>building AI agents</em>, deploying workflow automations on
-            MCP and the Claude API, and finishing the Anthropic Claude
-            Certified Architect track. The work is part PM, part engineer,
-            part communicator — running an executive readout in the morning
-            and shipping the agent pipeline in the afternoon.
+            Now I build <em>AI agents</em> and workflow automations on
+            MCP and the Claude API, finishing the Anthropic
+            Architect track. Part PM, part builder — I run the process
+            and I make the thing.
+
           </p>
           <p>
-            Outside that, I founded <em>DANC3</em>, a fully onchain music
-            collective — 100+ artists supported, 2,500+ collectors. I mint
-            generative art. I curate music. <em>I build communities.</em> Not
-            a side project — it's how I stay close to where culture and
-            technology are pointing next.
+            And the creative work is the point, not the side project. I make
+            videos, take photos, mix tapes, and produce events. I founded
+            <em>DANC3</em>, an onchain music collective — 100+ artists,
+            2,500+ collectors. I mint generative art. I curate music.
+
           </p>
 
           <h4 className="subhead" style={{ marginTop: 28 }}>Certifications</h4>
@@ -442,7 +442,7 @@ function About({ resumeUrl }) {
           <div className="kvlist">
             <div className="row"><span className="k">Based</span><span className="v">Sarasota, FL · UTC−4</span></div>
             <div className="row"><span className="k">Status</span><span className="v">Available</span></div>
-            <div className="row"><span className="k">Role</span><span className="v">AI Transformation PM</span></div>
+            <div className="row"><span className="k">Role</span><span className="v">Creative producer · PM</span></div>
             <div className="row"><span className="k">Open to</span><span className="v">FT · Consulting · Collab</span></div>
           </div>
 
