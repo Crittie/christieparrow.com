@@ -113,7 +113,7 @@ function Hero({ resumeUrl }) {
         </h1>
 
         <p className="hero-tagline" data-reveal>
-          <em>Senior project manager.</em> Sixteen years moving large systems
+          <em>Project manager.</em> Sixteen years moving large systems
           forward — at the IRS, at FEMA during Hurricane Irma, now in AI.
           PMP-certified, MCP-fluent, on the Anthropic Architect track.
           Based in Sarasota.
