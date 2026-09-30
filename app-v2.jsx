@@ -475,8 +475,8 @@ function Footer() {
             </a>
           </p>
           <p className="footer-blurb">
-            Building at the intersection of AI and culture? Open to full-time
-            roles, consulting, and creative collaborations.
+            Making something and need someone who can run it and make it
+            good? Open to full-time roles, consulting, and creative collaborations.
           </p>
         </div>
 
