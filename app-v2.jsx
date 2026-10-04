@@ -114,8 +114,8 @@ function Hero({ resumeUrl }) {
 
         <p className="hero-tagline" data-reveal>
           <em>Project manager, PMP.</em> Sixteen years shipping complex
-          programs at the IRS and FEMA. Now I'm a maker: videos,
-          photos, mixtapes, stories, events.
+          programs at the IRS and FEMA. Now I'm an operator who
+          efficiently runs and translates complex programs.
 
         </p>
 
@@ -141,12 +141,12 @@ function Hero({ resumeUrl }) {
           <span className="fact-d">Earned 2014.</span>
         </div>
         <div className="fact" data-reveal>
-          <span className="fact-k">Making</span>
+          <span className="fact-k">Operating</span>
           <span className="fact-v">MCP</span>
           <span className="fact-d">Videos, photos, mixtapes, events.</span>
         </div>
         <div className="fact" data-reveal>
-          <span className="fact-k">The maker work</span>
+          <span className="fact-k">The creative practice</span>
           <span className="fact-v serif">DANC3</span>
           <span className="fact-d">Onchain music collective, founder.</span>
         </div>
@@ -388,7 +388,7 @@ function About({ resumeUrl }) {
       <div className="section-head">
         <span className="section-num"><strong>04</strong> · About</span>
         <h2 className="section-title">
-          <em>I'm a maker.</em>
+          <em>I'm an operator.</em>
         </h2>
         <span className="section-side">Profile</span>
       </div>
@@ -405,12 +405,12 @@ function About({ resumeUrl }) {
           <p>
             Now I build <em>AI agents</em> and workflow automations on
             MCP and the Claude API, finishing the Anthropic
-            Architect track. Part PM, part builder — I run the process
-            and I make the thing.
+            Architect track. I'm an operator — I run the process
+            and translate complex programs into results.
 
           </p>
           <p>
-            And the creative work is the point, not the side project. I make
+            Outside the operator work, I keep my own creative practice. I make
             videos, take photos, mix tapes, and produce events. I founded
             <em>DANC3</em>, an onchain music collective — 100+ artists,
             2,500+ collectors. I mint generative art. I curate music.
@@ -442,7 +442,7 @@ function About({ resumeUrl }) {
           <div className="kvlist">
             <div className="row"><span className="k">Based</span><span className="v">Sarasota, FL · UTC−4</span></div>
             <div className="row"><span className="k">Status</span><span className="v">Available</span></div>
-            <div className="row"><span className="k">Role</span><span className="v">Creative producer · PM</span></div>
+            <div className="row"><span className="k">Role</span><span className="v">Operator · PM</span></div>
             <div className="row"><span className="k">Open to</span><span className="v">FT · Consulting · Collab</span></div>
           </div>
 
