@@ -292,7 +292,7 @@ body::before {
 }
 
 /* tiny size variant for the nav resume button on small screens */
-.btn.sm { padding: 8px 12px; min-height: 36px; font-size: 11px; }
+.btn.sm { padding: 8px 12px; min-height: 36px; font-size: 11px; } /* accent variant — makes the nav resume button impossible to miss */ .btn.accent { background: var(--accent); border-color: var(--accent); color: #fff; } .btn.accent:hover { background: var(--ink); border-color: var(--ink); color: var(--bg); }
 
 .nav-icon {
   width: 36px; height: 36px;
