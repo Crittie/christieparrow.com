@@ -76,7 +76,7 @@ function Nav({ active, resumeUrl }) {
              target="_blank" rel="noopener" aria-label="GitHub"><GithubIcon /></a>
           <a className="nav-icon" href="https://www.linkedin.com/in/christine-parrow-pmp/"
              target="_blank" rel="noopener" aria-label="LinkedIn"><LinkedInIcon /></a>
-          <a className="btn sm" href={resumeUrl} download>
+          <a className="btn sm accent" href={resumeUrl} download>
             Résumé <span className="arr"><ArrowDown /></span>
           </a>
         </div>
