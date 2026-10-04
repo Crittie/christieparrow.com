@@ -236,7 +236,7 @@ function Creative() {
       <div className="section-head">
         <span className="section-num"><strong>03</strong> · Creative</span>
         <h2 className="section-title">
-          The main practice — <em>music, visuals, culture.</em>
+          The creative practice — <em>music, visuals, culture.</em>
         </h2>
         <span className="section-side">Founder · Curator</span>
       </div>
