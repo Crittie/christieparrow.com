@@ -143,7 +143,7 @@ function Hero({ resumeUrl }) {
         <div className="fact" data-reveal>
           <span className="fact-k">Operating</span>
           <span className="fact-v">MCP</span>
-          <span className="fact-d">Videos, photos, mixtapes, events.</span>
+          <span className="fact-d">Autonomous agents, onchain financial tools, project management workflows.</span>
         </div>
         <div className="fact" data-reveal>
           <span className="fact-k">The creative practice</span>
@@ -397,7 +397,7 @@ function About({ resumeUrl }) {
         <div className="about-body" data-reveal>
           <p>
             Sixteen years running large programs. <em>At the IRS</em>,
-            modernization work against legacy systems.
+            modernization work against legacy systems.{" "}
             <em>At FEMA during Hurricane Irma</em>, disaster recovery
             under real time pressure.
 
@@ -411,7 +411,7 @@ function About({ resumeUrl }) {
           </p>
           <p>
             Outside the operator work, I keep my own creative practice. I make
-            videos, take photos, mix tapes, and produce events. I founded
+            videos, take photos, mix tapes, and produce events. I founded{" "}
             <em>DANC3</em>, an onchain music collective — 100+ artists,
             2,500+ collectors. I mint generative art. I curate music.
 
