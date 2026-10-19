@@ -180,7 +180,7 @@ const WBS_ROWS = [
   { id: "3.1", name: "DANC3", org: "Founder", period: "2023 · present", status: ["active", "ACTIVE"],
     outcome: "Onchain music collective. 100+ artists, 2,500+ collectors, 100% onchain distribution." },
   { id: "3.2", name: "glimmers", org: "Personal", period: "In progress", status: ["prog", "IN PROGRESS"],
-    outcome: "A memoir in progress. Beauty in the mundane, strangers, companionship, almost lovers." },
+    outcome: "A memoir about grief, written in glimmers: the small bright moments that keep showing up inside the loss." },
   { id: "3.3", name: "Fragments of Perception", org: "Celosphere", period: "Minted", status: ["done", "COMPLETE"],
     outcome: "Three generative pieces on how a face fractures under perception. Celo Foundation × Rarible." },
 ];
