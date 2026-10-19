@@ -6,8 +6,8 @@ const { useState, useEffect, useRef } = React;
 // ─── TWEAKS ────────────────────────────────────────────────────────
 
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-  "mode": "editorial",
-  "accent": "rust",
+  "mode": "lights-out",
+  "accent": "ink",
   "resumeUrl": "assets/Christie-Parrow-Resume.pdf"
 }/*EDITMODE-END*/;
 
@@ -67,6 +67,7 @@ function Nav({ active, resumeUrl }) {
           <span className="index">/ index</span>
         </a>
         <div className="nav-links">
+          {item("board", "System")}
           {item("work", "Work")}
           {item("creative", "Creative")}
           {item("about", "About")}
@@ -127,6 +128,12 @@ function Hero({ resumeUrl }) {
             christineparrow@gmail.com <span className="arr"><ArrowUR /></span>
           </a>
         </div>
+
+        <figure className="hero-photo" data-reveal>
+          <img src={asset("christiePortrait", "assets/christie-portrait.jpg")}
+               alt="Christie Parrow at sunset over Barcelona, holding her dog on the steps of Montjuïc" />
+          <figcaption>Barcelona · Montjuïc</figcaption>
+        </figure>
       </div>
 
       <div className="hero-grid">
@@ -149,6 +156,135 @@ function Hero({ resumeUrl }) {
           <span className="fact-k">The creative practice</span>
           <span className="fact-v serif">DANC3</span>
           <span className="fact-d">Onchain music collective, founder.</span>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
+// ─── SYSTEM BOARD ──────────────────────────────────────────────────
+
+const RUNNING = [
+  {
+    name: "Luminous Pulse",
+    desc: "The AI operations practice I founded. Consulting and data partnerships for established Florida businesses.",
+    meta: "VENICE, FL",
+  },
+  {
+    name: "micro1 · AI training",
+    desc: "Contract AI training and evaluation work. Teaching models on real operational tasks, at professional rates.",
+    meta: "REMOTE",
+  },
+  {
+    name: "The verification pipeline",
+    desc: "My prospecting system, below. AI research comes in, human-verified operations go out. It processed ten new companies this week.",
+    meta: "MCP · CLAUDE API",
+  },
+  {
+    name: "DANC3",
+    desc: "The onchain music collective I founded. 100+ artists, 2,500+ collectors, still releasing.",
+    meta: "ONCHAIN",
+  },
+];
+
+const FLOW = [
+  { t: "01 · SOURCE", d: "An AI sweep covers a defined territory and returns candidate companies." },
+  { t: "02 · VERIFY", d: "Every claim is checked against the company's own filings, pages, and records." },
+  { t: "03 · GATE", d: "Size, decision-maker, and data-ownership tests. Failures park. They do not pass." },
+  { t: "04 · LOAD", d: "Survivors enter the CRM with their open questions still attached." },
+  { t: "05 · APPROVE", d: "Nothing sends without a human review. The gate is the feature." },
+  { t: "06 · SEND", d: "One short, neighborly email. The details follow only after a yes." },
+];
+
+const SHIPPED = [
+  "IRS intake redesign, manual volume down 40%",
+  "Cycle time down 30% across 400+ technology requests",
+  "Delivery dashboards tracking 100+ active requests",
+  "Self-service intake website — designed and launched",
+  "Executive briefings for monthly CTO reviews",
+  "FEMA disaster recovery operations, Hurricane Irma",
+];
+
+const LAB = [
+  {
+    name: "glimmers",
+    desc: "A memoir in progress. Beauty in the mundane, strangers, companionship, almost lovers.",
+  },
+  {
+    name: "First mixtape",
+    desc: "A DJ crate built from 285 onchain tracks, 125 artists. Learning to mix, in public.",
+  },
+  {
+    name: "Open water",
+    desc: "Learning to scuba dive this fall, in the Gulf and then Hawaii. Surf is next.",
+  },
+];
+
+function Board() {
+  const [step, setStep] = useState(0);
+  useEffect(() => {
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const id = setInterval(() => setStep((s) => (s + 1) % FLOW.length), 1700);
+    return () => clearInterval(id);
+  }, []);
+
+  const ticker = SHIPPED.join("   ///   ") + "   ///   ";
+
+  return (
+    <section id="board" className="section" data-screen-label="02 System Board">
+      <div className="section-head">
+        <span className="section-num"><strong>02</strong> · The System</span>
+        <h2 className="section-title">
+          An operator's homepage <em>should run like one.</em>
+        </h2>
+        <span className="section-side">Live board</span>
+      </div>
+
+      <div className="board-frame" data-reveal>
+        <div className="board-bar">
+          <span>CHRISTIE.SYS · OPERATIONS BOARD</span>
+          <span><span className="live-dot" />ALL SYSTEMS RUNNING</span>
+        </div>
+
+        <div className="board-rows">
+          {RUNNING.map((r, i) => (
+            <div className="brow boot" style={{ animationDelay: (i * 150) + "ms" }} key={r.name}>
+              <span className="brow-status"><span className="live-dot" />RUNNING</span>
+              <span className="brow-name">{r.name}</span>
+              <span className="brow-desc">{r.desc}</span>
+              <span className="brow-meta">{r.meta}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="flow">
+          <div className="flow-head">THE MACHINE · HOW A RAW LIST BECOMES VERIFIED OPERATIONS</div>
+          <div className="flow-steps">
+            {FLOW.map((f, i) => (
+              <span className={"fstep" + (i === step ? " on" : "")} key={f.t}>{f.t}</span>
+            ))}
+          </div>
+          <p className="flow-cap">{FLOW[step].d}</p>
+        </div>
+
+        <div className="ticker" aria-label="Shipped work">
+          <div className="ticker-track">
+            <span className="ticker-chunk">{ticker}</span>
+            <span className="ticker-chunk">{ticker}</span>
+          </div>
+        </div>
+
+        <div className="lab">
+          <div className="flow-head">IN THE LAB — THE CREATIVE PRACTICE, OFF THE CLOCK</div>
+          <div className="lab-grid">
+            {LAB.map((l) => (
+              <div className="lab-item" key={l.name}>
+                <h4>{l.name}</h4>
+                <p>{l.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -186,9 +322,9 @@ const WORK = [
 
 function Work() {
   return (
-    <section id="work" className="section" data-screen-label="02 Work">
+    <section id="work" className="section" data-screen-label="03 Work">
       <div className="section-head">
-        <span className="section-num"><strong>02</strong> · Work</span>
+        <span className="section-num"><strong>03</strong> · Work</span>
         <h2 className="section-title">
           Open source, in the open. <em>github.com/crittie.</em>
         </h2>
@@ -232,9 +368,9 @@ const DANC3_COVERS = [
 
 function Creative() {
   return (
-    <section id="creative" className="section" data-screen-label="03 Creative">
+    <section id="creative" className="section" data-screen-label="04 Creative">
       <div className="section-head">
-        <span className="section-num"><strong>03</strong> · Creative</span>
+        <span className="section-num"><strong>04</strong> · Creative</span>
         <h2 className="section-title">
           The creative practice — <em>music, visuals, culture.</em>
         </h2>
@@ -384,9 +520,9 @@ const TOOLS = [
 
 function About({ resumeUrl }) {
   return (
-    <section id="about" className="section" data-screen-label="04 About">
+    <section id="about" className="section" data-screen-label="05 About">
       <div className="section-head">
-        <span className="section-num"><strong>04</strong> · About</span>
+        <span className="section-num"><strong>05</strong> · About</span>
         <h2 className="section-title">
           <em>I'm an operator.</em>
         </h2>
@@ -433,12 +569,6 @@ function About({ resumeUrl }) {
         </div>
 
         <div className="about-side" data-reveal>
-          <figure className="portrait" style={{ margin: 0 }}>
-            <img src={asset("christiePortrait", "assets/christie-portrait.jpg")}
-                 alt="Christie Parrow at sunset over Barcelona, holding her dog on the steps of Montjuïc" />
-            <figcaption>Barcelona · Montjuïc</figcaption>
-          </figure>
-
           <div className="kvlist">
             <div className="row"><span className="k">Based</span><span className="v">Sarasota, FL · UTC−4</span></div>
             <div className="row"><span className="k">Status</span><span className="v">Available</span></div>
@@ -534,7 +664,7 @@ function useScrollSpy(ids) {
 
 function App() {
   const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
-  const active = useScrollSpy(["top", "work", "creative", "about"]);
+  const active = useScrollSpy(["top", "board", "work", "creative", "about"]);
 
   useEffect(() => {
     const id = requestAnimationFrame(() => document.body.classList.add("cp-ready"));
@@ -554,6 +684,7 @@ function App() {
 
       <main className="shell">
         <Hero resumeUrl={resumeUrl} />
+        <Board />
         <Work />
         <Creative />
         <About resumeUrl={resumeUrl} />
