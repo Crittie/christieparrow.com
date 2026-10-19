@@ -125,7 +125,7 @@ function Kpis() {
 
 const WBS_TREE = [
   {
-    id: "1.0", name: "FEDERAL PROGRAM OPERATIONS", org: "IRS · U.S. TREASURY",
+    id: "1.0", name: "FEDERAL PROGRAM OPERATIONS", org: "IRS · U.S. TREASURY", cls: "b1",
     kids: [
       ["1.1", "Intake redesign"],
       ["1.2", "Self-service intake site"],
@@ -136,7 +136,7 @@ const WBS_TREE = [
     ],
   },
   {
-    id: "2.0", name: "AI & DATA WORK", org: "2025 · PRESENT",
+    id: "2.0", name: "AI & DATA WORK", org: "2025 · PRESENT", cls: "b2",
     kids: [
       ["2.1", "micro1 · AI training"],
       ["2.2", "Luminous Pulse"],
@@ -146,7 +146,7 @@ const WBS_TREE = [
     ],
   },
   {
-    id: "3.0", name: "CREATIVE PRACTICE", org: "FOUNDER · CURATOR",
+    id: "3.0", name: "CREATIVE PRACTICE", org: "FOUNDER · CURATOR", cls: "b3",
     kids: [
       ["3.1", "DANC3 collective"],
       ["3.2", "glimmers · memoir"],
@@ -190,6 +190,13 @@ function Wbs() {
     <section id="wbs" className="section" data-screen-label="03 WBS">
       <SectionHead index="03" title="WORK BREAKDOWN STRUCTURE" side="Career program · all work packages" />
 
+      <div className="legend" aria-label="Color key">
+        <span><span className="l-dot c-blue" />1.0 Federal</span>
+        <span><span className="l-dot c-purple" />2.0 AI &amp; Data</span>
+        <span><span className="l-dot c-orange" />3.0 Creative</span>
+        <span className="legend-note">Color follows the work package everywhere on this page</span>
+      </div>
+
       <div className="wbs-tree" aria-label="Work breakdown structure diagram">
         <div className="wbs-root">
           <span className="wbs-root-id">0.0</span>
@@ -197,7 +204,7 @@ function Wbs() {
         </div>
         <div className="wbs-branches">
           {WBS_TREE.map((b) => (
-            <div className="wbs-branch" key={b.id}>
+            <div className={"wbs-branch " + b.cls} key={b.id}>
               <div className="wbs-node">
                 <span className="wbs-node-id">{b.id}</span>
                 <span className="wbs-node-name">{b.name}</span>
@@ -227,9 +234,9 @@ function Wbs() {
           </thead>
           <tbody>
             {WBS_ROWS.map((r) => (
-              <tr key={r.id}>
+              <tr key={r.id} className={"r" + r.id.charAt(0)}>
                 <td className="c-id">{r.id}</td>
-                <td className="d-name">{r.name}<span className="d-org-inline"> · {r.org}</span></td>
+                <td className="d-name"><span className="d-dot" />{r.name}<span className="d-org-inline"> · {r.org}</span></td>
                 <td className="c-org">{r.org}</td>
                 <td className="c-per">{r.period}</td>
                 <td className="c-st"><Pill kind={r.status[0]}>{r.status[1]}</Pill></td>
@@ -250,13 +257,13 @@ const AXIS_START = 2009, AXIS_SPAN = 18;
 const pct = (yr) => ((yr - AXIS_START) / AXIS_SPAN) * 100;
 
 const GANTT = [
-  { name: "IRS · Program operations", note: "2009 – 2025", from: 2009, to: 2025, cls: "" },
-  { name: "FEMA · Hurricane Irma detail", note: "Milestone · 2017", mile: 2017.75 },
-  { name: "DANC3 · Onchain collective", note: "2023 – present", from: 2023, to: 2027, cls: "lite" },
-  { name: "micro1 · AI training", note: "2025 – present", from: 2025, to: 2027, cls: "" },
-  { name: "Family Preserves · AI consulting", note: "2025 – present", from: 2025, to: 2027, cls: "lite" },
-  { name: "GenAI workflow projects", note: "2025 – present", from: 2025, to: 2027, cls: "lite" },
-  { name: "Luminous Pulse", note: "2026 – present", from: 2026, to: 2027, cls: "" },
+  { name: "IRS · Program operations", note: "2009 – 2025", from: 2009, to: 2025, cls: "c-blue" },
+  { name: "FEMA · Hurricane Irma detail", note: "Milestone · 2017", mile: 2017.75, cls: "c-ink" },
+  { name: "DANC3 · Onchain collective", note: "2023 – present", from: 2023, to: 2027, cls: "c-orange" },
+  { name: "micro1 · AI training", note: "2025 – present", from: 2025, to: 2027, cls: "c-purple" },
+  { name: "Family Preserves · AI consulting", note: "2025 – present", from: 2025, to: 2027, cls: "c-green" },
+  { name: "GenAI workflow projects", note: "2025 – present", from: 2025, to: 2027, cls: "c-yellow" },
+  { name: "Luminous Pulse", note: "2026 – present", from: 2026, to: 2027, cls: "c-red" },
 ];
 const TICKS = [2009, 2012, 2015, 2018, 2021, 2024, 2027];
 
@@ -268,7 +275,7 @@ function Gantt() {
         {GANTT.map((g) => (
           <div className="g-row" key={g.name}>
             <div className="g-label">
-              <span className="g-name">{g.name}</span>
+              <span className="g-name"><span className={"g-dot " + g.cls} />{g.name}</span>
               <span className="g-note">{g.note}</span>
             </div>
             <div className="g-track">

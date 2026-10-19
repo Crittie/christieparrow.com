@@ -13,6 +13,12 @@
   --line-strong: #B9BDC9;
   --blue: #1D4FBF;
   --blue-soft: #8FB0EC;
+  --c-blue: #1D4FBF;
+  --c-purple: #7C4DBE;
+  --c-orange: #E07B24;
+  --c-green: #2E7D4F;
+  --c-yellow: #E3A008;
+  --c-red: #C93A2E;
   --green: #2E7D4F;
   --green-line: #BFE3C6;
   --green-bg: #EAF5EA;
@@ -427,7 +433,7 @@ table.dict { width: 100%; min-width: 880px; border-collapse: collapse; font-size
   position: absolute;
   top: 50%;
   transform: translate(-50%, -54%);
-  color: var(--blue);
+  color: var(--ink);
   font-size: 12px;
   line-height: 1;
 }
@@ -562,6 +568,76 @@ table.kv { width: 100%; border-collapse: collapse; font-size: 14px; }
   letter-spacing: 0;
   color: var(--ink-60);
 }
+
+/* ─── COLOR SYSTEM ────────────────────────────────────────── */
+/* One color per branch / pipeline, used consistently across
+   the legend, WBS tree, dictionary table, and Gantt chart. */
+
+.c-blue { background: var(--c-blue); }
+.c-purple { background: var(--c-purple); }
+.c-orange { background: var(--c-orange); }
+.c-green { background: var(--c-green); }
+.c-yellow { background: var(--c-yellow); }
+.c-red { background: var(--c-red); }
+.c-ink { background: var(--ink); }
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 22px;
+  margin-bottom: 22px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-60);
+}
+.legend > span { display: inline-flex; align-items: center; gap: 7px; }
+.l-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; flex: none; }
+.legend-note {
+  margin-left: auto;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 13.5px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink-40);
+}
+
+.wbs-branch.b1 { --branch: var(--c-blue); }
+.wbs-branch.b2 { --branch: var(--c-purple); }
+.wbs-branch.b3 { --branch: var(--c-orange); }
+.wbs-branch .wbs-node { border-color: var(--branch, var(--ink)); }
+.wbs-branch .wbs-node-id { color: var(--branch, var(--blue)); }
+.wbs-branch .wbs-kid-id { color: var(--branch, var(--blue)); }
+.wbs-branch .wbs-kids { border-left-color: color-mix(in srgb, var(--branch, #999) 45%, #ffffff); }
+.wbs-branch .wbs-kids li::before { border-top-color: color-mix(in srgb, var(--branch, #999) 45%, #ffffff); }
+
+.d-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  margin-right: 9px;
+  background: var(--ink-40);
+  vertical-align: 1px;
+}
+.dict tr.r1 .d-dot { background: var(--c-blue); }
+.dict tr.r2 .d-dot { background: var(--c-purple); }
+.dict tr.r3 .d-dot { background: var(--c-orange); }
+.dict tr.r1 .c-id { color: var(--c-blue); }
+.dict tr.r2 .c-id { color: var(--c-purple); }
+.dict tr.r3 .c-id { color: var(--c-orange); }
+
+.g-name { display: flex; align-items: center; }
+.g-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; margin-right: 8px; flex: none; }
+.g-bar.c-blue { background: var(--c-blue); }
+.g-bar.c-purple { background: var(--c-purple); }
+.g-bar.c-orange { background: var(--c-orange); }
+.g-bar.c-green { background: var(--c-green); }
+.g-bar.c-yellow { background: var(--c-yellow); }
+.g-bar.c-red { background: var(--c-red); }
 
 /* ─── RESPONSIVE ──────────────────────────────────────────── */
 
