@@ -141,7 +141,8 @@ const WBS_TREE = [
       ["2.1", "micro1 · AI training"],
       ["2.2", "Luminous Pulse"],
       ["2.3", "Verification pipeline"],
-      ["2.4", "Open source builds"],
+      ["2.4", "Family Preserves · consulting"],
+      ["2.5", "Open source builds"],
     ],
   },
   {
@@ -174,7 +175,9 @@ const WBS_ROWS = [
     outcome: "AI operations practice for established Florida businesses. Consulting plus a data partnership program." },
   { id: "2.3", name: "Verification pipeline", org: "Luminous Pulse", period: "2026 · present", status: ["active", "ACTIVE"],
     outcome: "AI research comes in, human-verified operations go out. Every claim checked before it is used." },
-  { id: "3.1", name: "DANC3", org: "Founder", period: "Ongoing", status: ["active", "ACTIVE"],
+  { id: "2.4", name: "Family Preserves, by Cielito Mercado Vivas", org: "AI consulting", period: "2025 · present", status: ["active", "ACTIVE"],
+    outcome: "AI consulting behind the book's Kickstarter campaign. Helped raise $30,000 within 60 days." },
+  { id: "3.1", name: "DANC3", org: "Founder", period: "2023 · present", status: ["active", "ACTIVE"],
     outcome: "Onchain music collective. 100+ artists, 2,500+ collectors, 100% onchain distribution." },
   { id: "3.2", name: "glimmers", org: "Personal", period: "In progress", status: ["prog", "IN PROGRESS"],
     outcome: "A memoir in progress. Beauty in the mundane, strangers, companionship, almost lovers." },
@@ -249,8 +252,9 @@ const pct = (yr) => ((yr - AXIS_START) / AXIS_SPAN) * 100;
 const GANTT = [
   { name: "IRS · Program operations", note: "2009 – 2025", from: 2009, to: 2025, cls: "" },
   { name: "FEMA · Hurricane Irma detail", note: "Milestone · 2017", mile: 2017.75 },
-  { name: "DANC3 · Onchain collective", note: "2024 – present", from: 2024, to: 2027, cls: "lite" },
+  { name: "DANC3 · Onchain collective", note: "2023 – present", from: 2023, to: 2027, cls: "lite" },
   { name: "micro1 · AI training", note: "2025 – present", from: 2025, to: 2027, cls: "" },
+  { name: "Family Preserves · AI consulting", note: "2025 – present", from: 2025, to: 2027, cls: "lite" },
   { name: "GenAI workflow projects", note: "2025 – present", from: 2025, to: 2027, cls: "lite" },
   { name: "Luminous Pulse", note: "2026 – present", from: 2026, to: 2027, cls: "" },
 ];
