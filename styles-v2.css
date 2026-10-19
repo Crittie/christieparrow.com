@@ -1100,9 +1100,9 @@ body::before {
 .hero-photo { margin: 42px 0 0; }
 .hero-photo img {
   width: 100%;
-  height: clamp(260px, 40vw, 400px);
+  height: clamp(320px, 48vw, 520px);
   object-fit: cover;
-  object-position: center 32%;
+  object-position: center 45%;
   border-radius: var(--radius);
   display: block;
 }
