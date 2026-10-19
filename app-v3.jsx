@@ -336,7 +336,7 @@ function Appendices() {
           </table>
           <h3 className="appx-h" style={{ marginTop: 26 }}>C · STACK</h3>
           <div className="chips">
-            {["MS Project", "Smartsheet", "SharePoint", "Office 365", "Notion", "Figma",
+            {["MS Project", "Smartsheet", "Jira", "SharePoint", "Office 365", "Notion", "Figma",
               "Claude API", "MCP", "GitHub", "DaVinci Resolve"].map((t) => (
               <span className="chip" key={t}>{t}</span>
             ))}
