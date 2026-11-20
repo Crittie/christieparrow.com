@@ -245,7 +245,7 @@ function Header() {
       <div className="top-id">
         <div className="top-kicker">CREATIVE TECHNOLOGIST · AI-ASSISTED DESIGN, VIDEO, AND INTERACTIVE WEB</div>
         <div className="top-name-row">
-          <span className="top-name">CHRISTIE PARROW</span>
+          <span className="top-name">CHRISTIE PARROW<span className="top-name-dot">.</span></span>
           <Pill kind="open">OPEN TO WORK</Pill>
         </div>
       </div>
@@ -491,8 +491,8 @@ function App() {
       <Header />
       <div className="stage">
         <Rail active={active} onSelect={select} />
-        <main className="panel" ref={panelRef} aria-label={section.title}>
-          <div className="panel-inner" key={active} style={{ "--c": section.color }}>
+        <main className="panel" ref={panelRef} aria-label={section.title} style={{ "--c": section.color }}>
+          <div className={"panel-inner s-" + section.id} key={active} style={{ "--c": section.color }}>
             {section.about
               ? <AboutPanel section={section} index={index} />
               : <SectionPanel section={section} index={index} />}
