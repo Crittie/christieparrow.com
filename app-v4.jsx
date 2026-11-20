@@ -26,6 +26,36 @@ const KPIS = [
 
 const SECTIONS = [
   {
+    id: "creative-studio",
+    label: "CREATIVE STUDIO",
+    title: "Creative Studio",
+    color: "#F5A2C7",
+    intro: "Design, video, and AI-assisted creative work",
+    projects: [
+      { name: "DANC3", org: "Founder", period: "2023 · present",
+        status: ["active", "ACTIVE"],
+        desc: "Onchain music collective. 100+ artists, 2,500+ collectors, 100% onchain distribution." },
+      { name: "Luminous Pulse", org: "Brand & web design", period: "2025 · present",
+        status: ["active", "ACTIVE"],
+        desc: "Identity, website, and social graphics for an AI operations practice. Designed and built end to end.",
+        href: "https://luminouspulse.co", linkLabel: "luminouspulse.co" },
+      { name: "christieparrow.com", org: "Interactive web", period: "2026 · present",
+        status: ["active", "ACTIVE"],
+        desc: "This site. A single-screen interactive dashboard, designed and built as a portfolio piece." },
+      { name: "AI image & video workflows", org: "Personal practice", period: "2025 · present",
+        status: ["active", "ACTIVE"],
+        desc: "Image and video work with Midjourney and Runway ML, edited in DaVinci Resolve and CapCut. Photography and visual storytelling." },
+      { name: "glimmers", org: "Personal", period: "In progress",
+        status: ["prog", "IN PROGRESS"],
+        desc: "A memoir about grief, written in glimmers: the small bright moments that keep showing up inside the loss." },
+      { name: "Fragments of Perception", org: "Celosphere", period: "Minted",
+        status: ["done", "COMPLETE"],
+        desc: "Three generative pieces on how a face fractures under perception. Celo Foundation × Rarible." },
+      { name: "Mixtape · curation", org: "DANC3",
+        href: "https://danc3.musictribes.xyz/", linkLabel: "DANC3 · mixtape" },
+    ],
+  },
+  {
     id: "ai-automation",
     label: "AI & AUTOMATION",
     title: "AI & Automation",
@@ -44,51 +74,6 @@ const SECTIONS = [
       { name: "GenAI workflow projects", period: "2025 · present" },
     ],
     note: "Currently finishing the Anthropic Architect track, and building agent workflows on MCP and the Claude API.",
-  },
-  {
-    id: "project-management",
-    label: "PROJECT MANAGEMENT",
-    title: "Project Management",
-    color: "#B4A0FA",
-    intro: "Federal program operations · IRS · U.S. Treasury",
-    stats: KPIS,
-    projects: [
-      { name: "Technology intake redesign", org: "IRS", period: "Program tenure",
-        status: ["done", "COMPLETE"],
-        desc: "Intake and triage for 400+ technology work requests. Manual volume down 40%, cycle time down 30%." },
-      { name: "Delivery dashboards", org: "IRS", period: "Program tenure",
-        status: ["done", "COMPLETE"],
-        desc: "Live tracking of 100+ active requests for program leadership." },
-      { name: "Executive briefing program", org: "IRS", period: "Monthly",
-        status: ["done", "COMPLETE"],
-        desc: "Briefing materials prepared for monthly CTO reviews." },
-      { name: "ShowRack vendor trial", org: "IRS", period: "Evaluation",
-        status: ["done", "COMPLETE"],
-        desc: "Change management for the trial. Adoption gaps captured against AutoCAD, cost-risk case briefed." },
-      { name: "Disaster recovery detail", org: "FEMA", period: "Hurricane Irma",
-        status: ["done", "COMPLETE"],
-        desc: "Recovery operations support under live disaster timelines." },
-    ],
-  },
-  {
-    id: "creative-studio",
-    label: "CREATIVE STUDIO",
-    title: "Creative Studio",
-    color: "#F5A2C7",
-    intro: "Creative practice · Founder · Curator",
-    projects: [
-      { name: "DANC3", org: "Founder", period: "2023 · present",
-        status: ["active", "ACTIVE"],
-        desc: "Onchain music collective. 100+ artists, 2,500+ collectors, 100% onchain distribution." },
-      { name: "glimmers", org: "Personal", period: "In progress",
-        status: ["prog", "IN PROGRESS"],
-        desc: "A memoir about grief, written in glimmers: the small bright moments that keep showing up inside the loss." },
-      { name: "Fragments of Perception", org: "Celosphere", period: "Minted",
-        status: ["done", "COMPLETE"],
-        desc: "Three generative pieces on how a face fractures under perception. Celo Foundation × Rarible." },
-      { name: "Mixtape · curation", org: "DANC3",
-        href: "https://danc3.musictribes.xyz/", linkLabel: "DANC3 · mixtape" },
-    ],
   },
   {
     id: "digital-products",
@@ -121,11 +106,36 @@ const SECTIONS = [
     ],
   },
   {
+    id: "project-management",
+    label: "PROJECT MANAGEMENT",
+    title: "Project Management",
+    color: "#B4A0FA",
+    intro: "Federal program operations · IRS · U.S. Treasury",
+    stats: KPIS,
+    projects: [
+      { name: "Technology intake redesign", org: "IRS", period: "Program tenure",
+        status: ["done", "COMPLETE"],
+        desc: "Intake and triage for 400+ technology work requests. Manual volume down 40%, cycle time down 30%." },
+      { name: "Delivery dashboards", org: "IRS", period: "Program tenure",
+        status: ["done", "COMPLETE"],
+        desc: "Live tracking of 100+ active requests for program leadership." },
+      { name: "Executive briefing program", org: "IRS", period: "Monthly",
+        status: ["done", "COMPLETE"],
+        desc: "Briefing materials prepared for monthly CTO reviews." },
+      { name: "ShowRack vendor trial", org: "IRS", period: "Evaluation",
+        status: ["done", "COMPLETE"],
+        desc: "Change management for the trial. Adoption gaps captured against AutoCAD, cost-risk case briefed." },
+      { name: "Disaster recovery detail", org: "FEMA", period: "Hurricane Irma",
+        status: ["done", "COMPLETE"],
+        desc: "Recovery operations support under live disaster timelines." },
+    ],
+  },
+  {
     id: "about",
     label: "ABOUT / EXPERIENCE",
     title: "About / Experience",
     color: "#F4C579",
-    intro: "The operator behind the dashboard",
+    intro: "The creative technologist behind the dashboard",
     about: true,
   },
 ];
@@ -148,8 +158,9 @@ const CREDENTIALS = [
   ["Awards", "Special Act Award, 2011 · Enterprise Operations MVP, 2012"],
 ];
 
-const STACK = ["MS Project", "Smartsheet", "Jira", "SharePoint", "Office 365", "Notion", "Figma",
-  "Claude API", "MCP", "GitHub", "DaVinci Resolve"];
+const STACK = ["Figma", "DaVinci Resolve", "CapCut", "Midjourney", "Runway ML",
+  "Claude API", "MCP", "GitHub", "Notion", "MS Project", "Smartsheet", "Jira",
+  "SharePoint", "Office 365"];
 
 const CHANNELS = [
   ["LinkedIn", "https://www.linkedin.com/in/christine-parrow-pmp/"],
@@ -232,7 +243,7 @@ function Header() {
   return (
     <header className="top">
       <div className="top-id">
-        <div className="top-kicker">PROJECT MANAGER · PROGRAM OPERATIONS · AI WORKFLOWS</div>
+        <div className="top-kicker">CREATIVE TECHNOLOGIST · AI-ASSISTED DESIGN, VIDEO, AND INTERACTIVE WEB</div>
         <div className="top-name-row">
           <span className="top-name">CHRISTIE PARROW</span>
           <Pill kind="open">OPEN TO WORK</Pill>
@@ -359,7 +370,7 @@ function AboutPanel({ section, index }) {
             <img src={asset("christiePortrait", "assets/christie-portrait.jpg")}
                  alt="Christie Parrow at sunset over Barcelona, holding her dog on the steps of Montjuïc" />
             <figcaption>
-              <span>PROJECT LEAD</span>
+              <span>CREATIVE TECHNOLOGIST</span>
               <span className="cap-place">Barcelona · Montjuïc</span>
             </figcaption>
           </figure>
@@ -372,9 +383,12 @@ function AboutPanel({ section, index }) {
         </div>
         <div className="about-right">
           <p className="about-bio">
-            Sixteen years running complex programs at the IRS and FEMA.
-            An operator who efficiently runs and translates complex
-            programs, now applying the same discipline to AI work.
+            Creative technologist working across design, video, and
+            interactive web, with AI tools in the daily workflow.
+            Sixteen years running complex programs at the IRS and FEMA
+            sit underneath the creative work: production discipline,
+            deadlines, stakeholder feedback cycles, and documentation
+            that holds up.
           </p>
 
           <h3 className="sub-h">Experience</h3>
@@ -407,8 +421,9 @@ function AboutPanel({ section, index }) {
             {EMAIL} <span className="arr"><ArrowUR /></span>
           </a>
           <p className="about-blurb">
-            Making something and need someone who can run it well?
-            Open to full-time roles, consulting, and collaborations.
+            Making something and need someone who can design it and
+            run it well? Open to full-time roles, consulting, and
+            collaborations.
           </p>
           <ul className="about-links">
             {CHANNELS.map((c) => (
@@ -439,7 +454,7 @@ function AboutPanel({ section, index }) {
 // ─── APP ───────────────────────────────────────────────────────────
 
 const SLUGS = SECTIONS.map((s) => s.id);
-const DEFAULT_SECTION = "project-management";
+const DEFAULT_SECTION = "creative-studio";
 
 function fromHash() {
   const h = window.location.hash.replace(/^#\/?/, "").replace(/\/$/, "");
